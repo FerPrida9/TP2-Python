@@ -18,16 +18,27 @@ def goal_scorer (players):
     max = (max_player, max_goals)
     return max
 
-def more_influential (players):
-    """ esta funcion recibe el diccionario de jugadores y retorna 
-    el nombre del jugador/jugadora mas influyente"""
-    max = -1
-    for player, stats in players.items():
-        sumTotal = stats[0]*1.5 + stats[1]*1.25 + stats[2]
-        if sumTotal > max:
-            nameMax = player
-            max = sumTotal
-    return nameMax
+def influence (players):
+    """ esta funcion recibe el diccionario de jugadores y crea una lista
+    de tuplas que contiene 2 elementos: nombre y la suma total del valor
+    de cada estadistica"""
+    return [(player, stats[0]*1.5 + stats[1]*1.25 + stats[2]) for player, stats in players.items()]
+
+def most_influential (players):
+    """ esta funcion recibe el diccionario de jugadores, crea la lista de 
+    tuplas con la funcion influence, y en base a esa lista calcula el
+    jugador/jugadora mas influyente y retorna su nombre"""
+    influence_list = influence (players)
+    best_player = max (influence_list, key = lambda x: x[1])
+    return best_player[0]
+    
+def goal_average (goals):
+    """ esta funcion recibe la lista de goles y retorna el 
+    promedio de goles por partido del equipo"""
+    return sum(goals)/25
+    
+
+
 
     
 
