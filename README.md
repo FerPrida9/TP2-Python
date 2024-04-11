@@ -2,5 +2,5 @@
 
 
 ### Alumno:
-  **Nombre:** Fermin Manuel Prida
-  **Numero de legajo:** 24594/2 
+- **Nombre:** Fermin Manuel Prida
+- **Número de legajo:** 24594/2
