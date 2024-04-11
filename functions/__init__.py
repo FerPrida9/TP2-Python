@@ -17,6 +17,18 @@ def goal_scorer (players):
             max_player = player
     max = (max_player, max_goals)
     return max
+
+def more_influential (players):
+    """ esta funcion recibe el diccionario de jugadores y retorna 
+    el nombre del jugador/jugadora mas influyente"""
+    max = -1
+    for player, stats in players.items():
+        sumTotal = stats[0]*1.5 + stats[1]*1.25 + stats[2]
+        if sumTotal > max:
+            nameMax = player
+            max = sumTotal
+    return nameMax
+
     
 
          
