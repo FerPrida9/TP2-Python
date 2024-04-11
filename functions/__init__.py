@@ -36,6 +36,11 @@ def goal_average (goals):
     """ esta funcion recibe la lista de goles y retorna el 
     promedio de goles por partido del equipo"""
     return sum(goals)/25
+
+def goalscorer_average (goal_scorer):
+    """ esta funcion recibe la tupla con los datos del goleador/goleadora
+    y retorna el promedio de goles por partido de ese jugador/jugadora"""
+    return goal_scorer[1]/25 
     
 
 
